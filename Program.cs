@@ -66,8 +66,8 @@ builder.Services.AddAuthentication(options =>
        }
     }
     */
-	options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-	options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+	options.ClientId = builder.Configuration["Google-ClientId"];
+	options.ClientSecret = builder.Configuration["Google-ClientSecret"];
 	options.ResponseType = OpenIdConnectResponseType.Code;
 	options.CallbackPath = "/signin-oidc-google";
 	options.Scope.Add("openid");
