@@ -52,20 +52,6 @@ builder.Services.AddAuthentication(options =>
 .AddOpenIdConnect("Google", options =>
 {
 	options.Authority = "https://accounts.google.com";
-	/*
-    These two values (client ID and client secret) must be created in the Google Cloud Platform Console:
-    https://support.google.com/cloud/answer/6158849?hl=en
-    https://developers.google.com/identity/openid-connect/openid-connect
-    They must then be added to the project's "user secrets": right-click the project in Visual Studio and select "Manage User Secrets" and write the following JSON:
-    {
-       "Authentication": {
-           "Google": {
-               "ClientId": "...",
-               "ClientSecret": "..."
-           }
-       }
-    }
-    */
 	options.ClientId = builder.Configuration["Google-ClientId"];
 	options.ClientSecret = builder.Configuration["Google-ClientSecret"];
 	options.ResponseType = OpenIdConnectResponseType.Code;
